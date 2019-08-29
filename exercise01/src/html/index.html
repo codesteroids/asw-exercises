@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- <%= warning %> -->
+    </head>
+    <body>
+          <div class="page-wrap">
+ 
+            <!-- <h1>Exercise 1 - A codear</h1>
+            <p><b>Make this fixed width design fluid</b><br>
+               It's a fixed 800px wide. Do your best at making it fit the screen more appropriately at any screen size.</p> -->
+            
+            <article class="main-story">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="img/article.png">
+                    <source media="(max-width: 1024px)" srcset="img/hero-medium.png">
+                    <source media="(min-width: 1024px)" srcset="img/hero-large.png">
+                    <img src="img/hero-large.png" alt="Main article image">
+                </picture>
+
+                <div class="story-intro">
+                    <h1>Highlited Article</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut mas</p>
+                </div>
+                
+            </article>
+            
+            <section class="sub-stories">
+                
+                <article class="sub-story">
+                    <img src="img/article.png"/>
+                    <div class="story-intro">
+                        <h2>Last article 1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </article>
+                
+                <article class="sub-story">
+                    <img src="img/article.png"/>
+                    <div class="story-intro">
+                        <h2>Last article 2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </article>
+                
+                <article class="sub-story">
+                    <img src="img/article.png"/>
+                    <div class="story-intro">
+                        <h2>Last article 3</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </article>
+            </section>
+        </div>  
+    </body>
+</html>

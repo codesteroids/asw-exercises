@@ -1,0 +1,78 @@
+//Imports
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i,900&display=swap');
+
+//BASIC RESET
+* {
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+// LAYOUT STYLES
+body {
+  font-family: 'Playfair Display', serif;
+}
+
+
+.page-wrap {
+  margin: 20px 8vw;
+}
+
+.main-story {
+  position: relative;
+  margin: 0 0 25px 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+a {
+  color: lightblue;
+}
+
+.story-intro {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  color: white;
+}
+
+h1 {
+   font-size: 4em;
+}
+h1, h2 {
+  margin: 0 0 10px 0;
+}
+
+.story-intro h1 {
+  font-size: 2.5em; 
+}
+.story-intro p {
+  margin: 0;
+}
+
+.sub-stories {
+  overflow: hidden;
+  margin: 0 0 25px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.sub-story {
+  width: 30%;
+  position: relative;
+  font-size: 80%;
+}
+
+/*IMPORTING RESPONSIVE RULES*/
+
+@import 'responsive';
