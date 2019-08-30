@@ -1,6 +1,6 @@
-#Exercise 01
+#Exercise 03
 
-This version of the exercise leverages the power of **flexbox** to create fluid layouts.
+This version of the exercise uses AngularJS to add functionality to a Form.
 
 This exercise uses **Webpack** helping in the automation of changes and processing **sass** stylesheets.
 
