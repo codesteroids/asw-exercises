@@ -1,10 +1,10 @@
-/*  This refactored code assumes that the HTML follows best practices 
-and the "nav" ID is present only once in the HTML layout */
+/*  This refactored code assumes that the HTML/CSS follows best practices 
+and the "nav" ID is "unique" (present only once) in the HTML layout */
 
 $(document).ready(function() {
   
   $('#nav > li > a').click(function() {
-    //first, we test if the clicked element is the active one, base on that we define the current of empty classd to be applied
+    //first, we test if the clicked element is the active one, base on that we define if the "current" class has to be applied
     const activeItem = $(this).parent().hasClass('current') ? '' : 'current';
     //Removing the "current"class and hiding the submenus happens whether we select a new menu item or click on the active item
     $('#nav').find('.current').removeClass('current').find('ul:visible').slideUp(250);

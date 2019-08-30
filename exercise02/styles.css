@@ -23,25 +23,26 @@ body {
 }
 
 #nav li a{
-  color: #333333;
+  color: #666666;
   text-decoration: none;
-  display: inline-block;
+  display: block;
   font-size: 1.2rem;
   padding: 1rem;
 }
 
 #nav li a:hover {
-  background-color: #333333;
-  color: #DDDDDD;
+  color: #000;
 }
 
 #nav li.current > a {
-  border-bottom: 2px solid #333333;
+  border-bottom: 1px solid #333333;
+  color: #000;
 }
+
 
 #nav > li > .submenu {
   list-style-type: none;
-  margin: 0 0 0 2rem;
+  margin: 0 0 0 1rem;
   display: none;
 }
 
