@@ -1,6 +1,6 @@
-#Exercise 03
+# Exercise 03
 
-##Exercise brief
+## Exercise brief
 Exercise 3 - Design
 
 To open a trial account in our system, the user must enter at least the following information: first and last name, email address (important that it is entered correctly otherwise the registration process does not go through without the user receives any feedback) and declare to accept the platform’s conditions of use.
@@ -11,7 +11,7 @@ Draw an optimal form that takes into account the desires of the potential client
 
 Result: HTML file with any resources (CSS, …)
 
-##Instructions
+## Instructions
 
 This version of the exercise uses AngularJS to add functionality to a Form.
 
@@ -29,7 +29,7 @@ after that you have 2 more commands you can use:
 If you just want to see the build in action, please load the `index.html` file located inside the `dist` folder.
 
 
-##Additional Notes
+## Additional Notes
 
 * This build leverages the use of UIKIt Framework
 * Design wise, the decision was to opt for a short multi-column form since we have max 6 items to fill, arguably this can be broken down in 2 steps (required info + optional info), however, the layout presents the information in a clear-easy to digest way.
