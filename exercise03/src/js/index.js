@@ -10,6 +10,22 @@ UIkit.use(Icons);
 
 
 angular.module('formApp', [])
-  .controller('formController', ['$scope', '$log', function($scope, $log) {
-    //$log.info('que bien!');
+  .controller('formController', ['$scope','$log', function($scope, $log) {
+    $scope.userData = {};
+    //AID TO PREVENT SPAM IN FORMS
+    $scope.zipRegex = /(?!.*)/;
+
+    $scope.submitForm = function(isValid, user) {
+      $scope.userData =  angular.copy(user);
+      if (isValid) {
+        $log.info("Processed!", user);
+      }
+      
+    }
+
+    $scope.reset = function(form) {
+      $scope.user = angular.copy($scope.userData);
+    };
+
+    $scope.reset();
   }]);

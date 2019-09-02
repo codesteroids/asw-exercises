@@ -11,7 +11,9 @@
       <div class="page-contents">
         <div class="uk-section uk-margin-remove-topt@s uk-margin-xlarge-top">
           <div class="uk-container uk-container-small">
+            <!-- BEGIN SIGNUP LAYOUT -->
             <div class="uk-grid-small uk-child-width-expand@s uk-background-default signup-form" uk-grid>
+              <!-- BEGIN  SIGNUP LEFT COLUMN-->
               <div class="uk-width-1-3 uk-visible@s signup-form__side-left uk-text-center uk-padding-remove-left">
                 <h4 class="mt-4">Your trial account<br>provides:</h4>
                 <img src="../img/users-light.png" alt="5 Members">
@@ -21,6 +23,7 @@
                 <img src="../img/history-light.png" alt="30 days of access">
                 <p class="uk-margin-small-top">30 days of access</p>
               </div>
+              <!-- BEGIN SIGNUP FORM -->
               <div class="uk-width-1-1@xs uk-width-2-3@s signup-form__side-right uk-padding" ng-controller="formController">
                 <div uk-grid>
                   <div class="uk-width-1-1 uk-text-center">
@@ -28,55 +31,87 @@
                     <h4 class="uk-margin-small-top uk-margin-small-bottom">Create your trial account</h4>
                   </div>
                 </div>
-                <form action="" class="uk-form-stacked uk-margin-small-top">
+                <form class="uk-form-stacked uk-margin-small-top" name="form" ng-submit="submitForm(form.$valid, user)" novalidate>
                   <div class="uk-child-width-expand@s uk-grid-medium" uk-grid>
+                    <!-- BEGIN FIRST NAME FIELD -->
                     <div class="uk-width-1-2@m form-field">
                         <label class="uk-form-label uk-text-bold" for="form-first-name">First name<sup class="required">*</sup></label>
-                        <div class="uk-form-controls uk-inline">
-                            <span class="uk-form-icon uk-form-icon-flip"></span>
-                            <input class="uk-input uk-form-danger" id="form-first-name" type="text" required>
+                        <div class="uk-form-controls uk-inline  uk-width-1-1">
+                            <input class="uk-input" id="form-first-name" type="text" name="firstName" ng-model="user.firstName" ng-minlength="3" ng-maxlength="20" required="">
+                            <span class="uk-form-icon uk-form-icon-flip uk-text-danger" ng-show="(form.$submitted || form.firstName.$touched) && (form.firstName.$error.required || form.firstName.$error.minlength)" uk-icon="icon: warning"></span>
                         </div>
+                        <!-- BEGIN FIRST NAME VALIDATION MESSAGES -->
+                        <div ng-show="form.$submitted || form.firstName.$touched">
+                          <span class="uk-text-danger form__error-message" ng-show="form.firstName.$error.required">This field is required</span>
+                          <span class="uk-text-danger form__error-message" ng-show="form.firstName.$error.minlength">Name is too shorth</span>
+                        </div>
+                        
                     </div>
+                    <!-- BEGIN LAST NAME FIELD -->
                     <div class="uk-width-1-2@m form-field">
                         <label class="uk-form-label uk-text-bold" for="form-last-name">Last name<sup class="required">*</sup></label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" id="form-last-name" type="text" required>
+                        <div class="uk-form-controls uk-inline  uk-width-1-1">
+                            <input class="uk-input" id="form-last-name" type="text" name="lastName" ng-model="user.lastName" ng-minlength="3" ng-maxlength="20" required>
+                            <span class="uk-form-icon uk-form-icon-flip uk-text-danger" ng-show="(form.$submitted || form.lastName.$touched) && (form.lastName.$error.required || form.lastName.$error.minlength)" uk-icon="icon: warning"></span>
                         </div>
+                        <!-- BEGIN LAST NAME VALIDATION MESSAGES -->
+                        <div ng-show="form.$submitted || form.lastName.$touched">
+                            <span class="uk-text-danger form__error-message" ng-show="form.lastName.$error.required">This field is required</span>
+                          </div>
                     </div>
+                    <!-- BEGIN EMAIL FIELD -->
                     <div class="uk-width-1-1 form-field">
                         <label class="uk-form-label uk-text-bold" for="form-email">Email<sup class="required">*</sup></label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" id="form-email" type="text" required>
+                        <div class="uk-form-controls uk-inline uk-width-1-1">
+                            <input class="uk-input" id="form-email" type="email"  name="emailAddress" ng-model="user.emailAddress" required>
+                            <span class="uk-form-icon uk-form-icon-flip uk-text-danger" ng-show="(form.$submitted || form.firstName.$touched) && (form.emailAddress.$error.required || form.emailAddress.$error.minlength)" uk-icon="icon: warning"></span>
+                        </div>
+                        <!-- BEGIN EMAIL NAME VALIDATION MESSAGES -->
+                        <div ng-show="form.$submitted || form.emailAddress.$touched">
+                            <span class="uk-text-danger form__error-message" ng-show="form.emailAddress.$error.required">This field is required</span>
+                            <span class="uk-text-danger form__error-message" ng-show="form.emailAddress.$error.email">Please provide a valid email</span>
                         </div>
                     </div>
+                    <!-- BEGIN COMPANY FIELD -->
                     <div class="uk-width-1-2@m form-field">
                         <label class="uk-form-label uk-text-bold" for="form-company">Company <span class="text-small">(Optional)</span></label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="form-company" type="text">
+                            <input class="uk-input" id="form-company" type="text" name="companyName" ng-model="user.companyName">
                         </div>
                     </div>
+                    <!-- BEGIN PHONE FIELD -->
                     <div class="uk-width-1-2@m form-field">
                         <label class="uk-form-label uk-text-bold" for="form-telephone">Phone number <span class="text-small">(Optional)</span></label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="form-telephone" type="text">
+                            <input class="uk-input" id="form-telephone" type="text"  name="phoneNumber" ng-model="user.phoneNumber">
                         </div>
                     </div>
+                    <!-- BEGIN ADDRESS FIELD -->
                     <div class="uk-width-1-1 form-field">
                         <label class="uk-form-label uk-text-bold" for="form-address">Address <span class="text-small">(Optional)</span></label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="form-address" type="text">
+                            <input class="uk-input" id="form-address" type="text"  name="streetAddress" ng-model="user.streetAddress">
                         </div>
                     </div>
+                    <!-- BEGIN ZIP CODE -->
+                    <span class="uk-hidden">
+                      <label for="zipcode" class="uk-hidden">Your zipcode</label>
+                      <input type="text" id="zipcode" value="" data-ng-pattern="zipRegex" ng-model="user.zipcode" class="uk-hidden"/>
+                    </span>
+                    <!-- BEGIN TERMS AND SUBMIT -->
                     <div class="uk-width-1-1 form-field">
-                        
                         <div class="uk-form-controls">
                             <label class="uk-form-label uk-text-bold" for="form-accept-terms">
-                              <input class="uk-checkbox" id="form-accept-terms" type="checkbox" required>
+                              <input class="uk-checkbox" name="acceptTerms" id="form-accept-terms" type="checkbox" ng-model="user.acceptConditions" required>
                              I Accept the Terms & Conditions</label>
+                        </div>
+                        <!-- BEGIN CHECKBOX VALIDATION MESSAGES -->
+                        <div ng-show="form.$submitted || form.acceptTerms.$touched">
+                            <span class="uk-text-danger form__error-message" ng-show="form.acceptTerms.$error.required">Please accept our Terms and Conditions</span>
                         </div>
                     </div>
                     <div class="uk-width-1-1 uk-text-left">
-                        <button class="uk-button uk-button-primary uk-text-bold">Create Account</button>
+                        <input type="submit" id="processForm" class="uk-button uk-button-primary uk-text-bold process-form" value="Create Account">
                     </div>
                   </div>
                 </form>
@@ -86,7 +121,5 @@
         </div>
       </div>
     </div>
-    
-    
 <script type="text/javascript" src="./js/main.bundle.js"></script></body>
 </html>

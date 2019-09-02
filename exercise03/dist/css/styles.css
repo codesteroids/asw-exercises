@@ -9982,4 +9982,16 @@ body {
     .page-contents .signup-form__side-right .required {
       color: #ed1c24;
       font-size: 0.8rem; }
+    .page-contents .signup-form__side-right .ng-invalid-required.ng-touched, .page-contents .signup-form__side-right .ng-invalid.ng-not-empty.ng-invalid-email {
+      border-color: #ed1c24; }
+    .page-contents .signup-form__side-right .ng-valid-required.ng-touched {
+      x-border-color: #78FA89; }
+    .page-contents .signup-form__side-right .form__error-message {
+      font-size: 0.8rem;
+      font-weight: bold; }
+
+/*IMPORT CUSTOM RESPONSIVE STYLES*/
+@media (max-width: 640px) {
+  .page-contents .uk-grid-small {
+    margin-left: 0; } }
 
