@@ -1,4 +1,4 @@
-#Exercise 01
+# Exercise 01
 
 This version of the exercise leverages the power of **flexbox** to create fluid layouts.
 

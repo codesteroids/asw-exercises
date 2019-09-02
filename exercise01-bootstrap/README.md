@@ -1,4 +1,4 @@
-#Exercise 01 - Bootstrap
+# Exercise 01 - Bootstrap
 
 This version of the exercise leverages the power of **bootstrap** to create fluid layouts.
 

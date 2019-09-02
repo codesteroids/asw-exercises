@@ -1,4 +1,4 @@
-#Exercise 02
+# Exercise 02
 
 There are 2 html files created to test the scripts:
 
