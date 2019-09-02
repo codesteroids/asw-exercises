@@ -48,8 +48,22 @@ module.exports = {
             },
           },
           'css-loader',
-          'sass-loader',
+          {
+            loader: 'resolve-url-loader',
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              sourceMapContents: false
+            }
+          },
+          
         ],
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        loader: 'url-loader'
       },
       /* {
         test: /\.(png|jpe?g|gif)$/i,
